@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} Tickets {% endblock %}
+{% block content %}
+{% load static %}
+
+<form method="POST" action="{% url 'ticketview' %}" enctype="multipart/form-data">  
+    {% csrf_token %}
+    <h3 style="color: green;">{{msg}}</h3>
+    <h3>Ticket No : </h3>
+    <input type="text" name="ticketno"><br>
+
+    <h3>Server Details : </h3>
+    <input type="text" name="serverdetails"><br>
+
+    <br>
+    <h3>Send Date : </h3>
+    <input type="date" name="senddate"><br>
+
+    <h3>License No : </h3>
+    <input type="text" name="licenseno"><br>
+    <br>
+
+    <h3>Upload File : </h3>
+    <input type="file" name="uploadfile"><br>
+    <br>
+
+    <a href="{% url 'showticket' %}"><input type="submit" value="Submit Details" /></a>
+    
+</form>
+
+{% endblock %}

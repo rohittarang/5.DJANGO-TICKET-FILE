@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} Tickets {% endblock %}
+{% block content %}
+{% load static %}
+
+<form method="POST" action="{% url 'index' %}" >  
+    {% csrf_token %}
+    <h3 style="color: red;">{{msg}}</h3>
+    <h3><label>Select Role:</label>
+        <select name="loginrole">
+            <option>User</option>
+            <option>Admin</option>
+        </select>
+    </h3>
+    <h3>Username : </h3>
+    <input type="text" name="frontusername"><br>
+    <h3>Password : </h3>
+    <input type="password" name="frontpassword"><br>
+    <br>
+    <a href="{% url 'ticketview' %}"><input type="submit" value="Login" /></a>
+    <a href="{% url 'registerpage' %}"><input type="button" value="Register" /></a>
+    
+</form>
+
+{% endblock %}

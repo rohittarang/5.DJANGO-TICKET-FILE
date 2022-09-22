@@ -1,0 +1,143 @@
+Username (leave blank to use 'sez5476'): Admin
+Email address: admin@gmail.com
+Password: Admin@123#
+Password (again): Admin@123#
+
+
+<!-- <a href="{% url 'ticketview' %}"" class=sel>Tickets</a> -->
+<!-- <a href="/ticketview/" class=sel>Tickets</a> -->
+
+
+<!-- <a href="{% url 'index' %}"" class=sel>Login</a>
+            
+            <a href="/admin/" class=sel>Admin Site</a> -->
+
+
+
+# def index(request):
+#     print(request.method)
+#     if request.method == "POST":
+#         uname = request.POST['frontusername']
+#         psw = request.POST['frontpassword']
+        
+#         print(uname,psw)
+        
+#         try:
+#             loginobject = Login.objects.get(username = uname).__dict__
+#             print(loginobject)
+        
+#             uname2 = loginobject.get('username')
+#             psw2 = loginobject.get('password')
+            
+#             if (uname==uname2 and psw==psw2):
+#                 return render(request,'ticketview.html')
+#             else:
+#                 return render(request,'index.html')
+#         except:
+#             return render (request, 'index.html')
+        
+#     else:
+#         return render(request,'index.html')
+
+
+
+# def article_add(request):
+#     print request.user, " is adding an article"
+#     if request.method == "POST":
+#         web_url = request.POST['web_url']
+#         Uploadarticle(web_url)
+#         return redirect('myapp:index')
+
+
+ticket_by_id.html
+
+
+{% extends 'base.html' %}
+{% block title %} Ticket #{{ticket.id}} {% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="ticket">
+    <table class="styled-table">
+        <h2> Ticket #{{ticket.id}}</h2>
+        <tbody>
+            <tr>
+                <td>Ticket No </td>
+                <td>{{ticket.ticketno}}</td>
+            </tr>
+            <tr>
+                <td>Server Details</td>
+                <td>{{ticket.serverdetails}}</td>
+            </tr>
+            <tr>
+                <td>Send Date</td>
+                <td>{{ticket.senddate}}</td>
+            </tr>
+            <tr>
+                <td>License No</td>
+                <td>{{ticket.licenseno}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+################################## ORIGINAL ##################################
+
+# def index(request):
+    
+#     if request.method == "POST":
+#         uname = request.POST['frontusername']
+#         psw = request.POST['frontpassword']
+        
+#         try:
+#             newuser = Login.objects.get(username=uname,password=psw).__dict__
+        
+#             uname2 = newuser.get('username')
+#             psw2 = newuser.get('password')
+#         except:
+#             return render(request,'index.html')
+        
+#         if(uname==uname2 and psw==psw2):
+#             return render(request,'ticketview.html')
+#         else:
+#             return render(request,'ticketview.html')
+#     else:
+#         return render(request,'index.html')
+    
+################################## ORIGINAL ##################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

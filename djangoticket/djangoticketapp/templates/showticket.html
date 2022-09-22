@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %} Tickets {% endblock %}
+{% block content %}
+{% load static %}
+
+<table class="styled-table">
+    
+    <thead>
+        <tr>
+            <th>Ticket ID</th>
+            <th>Ticket No </th>
+            <th>Server Details</th>
+            <th>Send Date</th>
+            <th>License No</th>
+            <th>File</th>
+        </tr>
+    </thead>
+
+    {% if key1 %}
+    <tbody>
+        {% for i in key1 %}
+        <tr>
+            <!-- <td><a href="/ticketview/{{ticket.id}}">{{ticket.id}}</td> -->
+            <td>{{i.id}}</td>
+            <td>{{i.ticketno}}</td>
+            <td>{{i.serverdetails}}</td>
+            <td>{{i.senddate}}</td>
+            <td>{{i.licenseno}}</td>
+            <td>{{i.mfile}}</td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+    {% endif %}
+        
+    
+
+</table>
+
+{% endblock %}
